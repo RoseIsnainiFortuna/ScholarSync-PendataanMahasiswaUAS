@@ -90,9 +90,6 @@ Copy hasil hash, jalankan query UPDATE yang ditampilkan di phpMyAdmin.
 ### 6. Akses Aplikasi
 `http://localhost/scholarsync`
 
-Login default:
-- Username: `admin`
-- Password: `admin123`
 
 ---
 
@@ -121,5 +118,5 @@ Login default:
 ---
 
 ## Author
-**[Nama Mahasiswa]** — NIM: [NIM]
+**Rose Isnaini Fortuna** — NIM: 25/556660/SV/25984
 Dosen: Achmad Choirudin Emcha, S.Kom., M.Eng.
