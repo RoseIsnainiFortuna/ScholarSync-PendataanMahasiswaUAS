@@ -1,0 +1,17 @@
+# Sensitive config
+includes/config.php
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Composer
+vendor/
+
+# Node (if used)
+node_modules/
+
+# Logs
+*.log

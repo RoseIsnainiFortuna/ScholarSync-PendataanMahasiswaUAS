@@ -1,0 +1,28 @@
+<?php
+// ============================================================
+// includes/config.php.example
+// Panduan Konfigurasi Database - SALIN file ini menjadi config.php
+// ============================================================
+
+define('DB_HOST', 'localhost');
+define('DB_USER', 'YOUR_DATABASE_USER');     // Contoh: root
+define('DB_PASS', 'YOUR_DATABASE_PASSWORD'); // Kosongkan jika default XAMPP/Laragon
+define('DB_NAME', 'scholarsync');
+define('DB_CHARSET', 'utf8mb4');
+
+// Buat koneksi MySQLi
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die('<div class="alert alert-danger m-3">
+        <strong>Database Error:</strong> Koneksi gagal — ' . htmlspecialchars($conn->connect_error) . '
+        <br><small>Pastikan MySQL/MariaDB sudah berjalan di Laragon/XAMPP.</small>
+    </div>');
+}
+
+// Set charset
+$conn->set_charset(DB_CHARSET);
+
+// Base URL helper (Sesuaikan dengan domain lokal atau hosting Anda)
+define('BASE_URL', 'http://localhost/scholarsync');

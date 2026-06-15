@@ -1,0 +1,487 @@
+/* ============================================================
+   assets/css/style.css — ScholarSync Academic
+   ============================================================ */
+
+/* ---- CSS Variables ---- */
+:root {
+  --primary: #1a3a5c;
+  --primary-light: #e8f0fb;
+  --accent: #1e3d6e;
+  --sidebar-w: 235px;
+  --topbar-h: 60px;
+  --bg: #f0f2f8;
+  --card-bg: #ffffff;
+  --border: #e2e8f0;
+  --text: #1e293b;
+  --muted: #64748b;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+}
+
+:root[data-theme="dark"] {
+  --primary: #8ab4f8;
+  --primary-light: #1f2937;
+  --accent: #4f86ff;
+  --bg: #0f172a;
+  --card-bg: #111827;
+  --border: #334155;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #f87171;
+}
+
+/* ---- Base ---- */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 0.9rem;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+html[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---- Sidebar ---- */
+#sidebar {
+  width: var(--sidebar-w);
+  min-height: 100vh;
+  background: var(--card-bg);
+  border-right: 1px solid var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  transition:
+    transform 0.25s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+  overflow-y: auto;
+}
+
+html[data-theme="dark"] #sidebar {
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-brand .brand-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--primary);
+}
+
+#sidebar .nav-link {
+  color: var(--muted);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+#sidebar .nav-link:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+#sidebar .nav-link.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ---- Main Content ---- */
+#main-content {
+  margin-left: var(--sidebar-w);
+  transition: margin-left 0.25s ease;
+}
+
+/* ---- Topbar ---- */
+.topbar {
+  height: var(--topbar-h);
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+html[data-theme="dark"] .topbar {
+  background: #111827;
+  border-color: #334155;
+}
+
+/* ---- Cards ---- */
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  transition: box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+}
+
+.stat-card .stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.chart-card,
+.content-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+/* ---- Hero Banner (dashboard mahasiswa) ---- */
+.hero-banner {
+  background: linear-gradient(135deg, var(--primary) 0%, #2563a8 100%);
+  border-radius: 14px;
+  color: #fff;
+  padding: 2rem;
+}
+
+/* ---- Badges / Status ---- */
+.badge-aktif {
+  background-color: #dcfce7;
+  color: #15803d;
+  font-weight: 600;
+  padding: 0.3em 0.7em;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+.badge-lulus {
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-weight: 600;
+  padding: 0.3em 0.7em;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+.badge-do {
+  background-color: #dc3545;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.3em 0.7em;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+/* ---- Table ---- */
+.table-clean th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+
+.table-clean td {
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border);
+}
+.table-clean tr:last-child td {
+  border-bottom: none;
+}
+.table-clean a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.table-clean a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Buttons ---- */
+.btn-primary-custom {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.btn-primary-custom:hover {
+  background: #14305a;
+  color: #fff;
+}
+
+/* ---- Forms ---- */
+.form-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26, 58, 92, 0.12);
+}
+.photo-crop-preview {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+.photo-crop-preview canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: grab;
+}
+.photo-crop-preview canvas:active {
+  cursor: grabbing;
+}
+.avatar-large,
+.avatar-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--primary);
+  font-weight: 700;
+}
+.avatar-large {
+  width: 96px;
+  height: 96px;
+  font-size: 2.25rem;
+}
+.avatar-small {
+  width: 72px;
+  height: 72px;
+  font-size: 1.4rem;
+}
+.field-error {
+  font-size: 0.78rem;
+  color: var(--danger);
+  margin-top: 0.25rem;
+  display: none;
+}
+.field-error.show {
+  display: block;
+}
+
+/* ---- Login page ---- */
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #eef2fb 0%, #d8e4f5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+}
+
+.login-icon-wrap {
+  width: 64px;
+  height: 64px;
+  background: var(--primary);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+/* ---- Sidebar overlay (mobile) ---- */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1040;
+  transition: background 0.2s ease;
+}
+.sidebar-overlay.active {
+  display: block;
+}
+
+html[data-theme="dark"] .sidebar-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* ---- Mobile sidebar hide ---- */
+@media (max-width: 991.98px) {
+  #sidebar {
+    transform: translateX(-100%);
+  }
+  #sidebar.open {
+    transform: translateX(0);
+  }
+  #main-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* ---- Page header row ---- */
+.page-header {
+  margin-bottom: 1.5rem;
+}
+.page-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+.page-header p {
+  color: var(--muted);
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+}
+
+/* ---- Pagination ---- */
+.pagination .page-link {
+  border-radius: 8px !important;
+  margin: 0 2px;
+  color: var(--primary);
+  font-size: 0.82rem;
+}
+.pagination .page-item.active .page-link {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* ---- Misc ---- */
+.text-primary-custom {
+  color: var(--primary) !important;
+}
+.bg-primary-custom {
+  background: var(--primary) !important;
+}
+
+/* ---- Dark mode explicit overrides (ensure previously black elements become light) ---- */
+html[data-theme="dark"] {
+  color: var(--text);
+}
+
+html[data-theme="dark"] a,
+html[data-theme="dark"] a:visited {
+  color: var(--primary);
+}
+
+html[data-theme="dark"] a:hover {
+  color: var(--accent);
+}
+
+/* Forms: make inputs dark background and light text */
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-select,
+html[data-theme="dark"] textarea {
+  background: var(--card-bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .form-control:focus,
+html[data-theme="dark"] .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(138, 180, 248, 0.08);
+}
+
+/* Cards, tables and blocks */
+html[data-theme="dark"] .content-card,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .chart-card,
+html[data-theme="dark"] .login-card {
+  background: var(--card-bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .table-clean th {
+  background: transparent;
+  color: var(--muted);
+  border-bottom-color: var(--border);
+}
+
+html[data-theme="dark"] .table-clean td {
+  color: var(--text);
+  border-bottom-color: var(--border);
+}
+
+/* Page header and small text */
+html[data-theme="dark"] .page-header p,
+html[data-theme="dark"] .small,
+html[data-theme="dark"] .text-muted {
+  color: var(--muted) !important;
+}
+
+/* Sidebar overlay darker */
+html[data-theme="dark"] .sidebar-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Ensure any hard-coded dark text becomes light */
+html[data-theme="dark"] .font-monospace,
+html[data-theme="dark"] .lead,
+html[data-theme="dark"] body,
+html[data-theme="dark"] .content-card * {
+  color: inherit;
+}
+
+/* Helper: lightened badges in dark mode retain contrast */
+html[data-theme="dark"] .badge-aktif {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: #bbf7d0;
+}
+html[data-theme="dark"] .badge-cuti {
+  background-color: rgba(245, 158, 11, 0.08);
+  color: #fde68a;
+}
+html[data-theme="dark"] .badge-probation {
+  background-color: rgba(220, 38, 38, 0.06);
+  color: #fecaca;
+}
+html[data-theme="dark"] .badge-lulus {
+  background-color: rgba(59, 130, 246, 0.06);
+  color: #bfdbfe;
+}
+html[data-theme="dark"] .badge-do {
+  background-color: rgba(148, 163, 184, 0.06);
+  color: #cbd5e1;
+}
