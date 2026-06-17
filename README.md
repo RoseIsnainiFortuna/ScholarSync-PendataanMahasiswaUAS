@@ -1,11 +1,11 @@
-# ScholarSync Academic
+# Terpal University
 **Aplikasi Pendataan Mahasiswa** — UAS Praktikum Pemrograman Web 1 (SVPL214208)
 Universitas Gadjah Mada · Sekolah Vokasi · TA Genap 2025/2026
 
 ---
 
 ## Deskripsi
-ScholarSync Academic adalah aplikasi web berbasis PHP untuk manajemen data mahasiswa.
+Terpal university adalah aplikasi web berbasis PHP untuk manajemen data mahasiswa.
 Fitur utama: CRUD mahasiswa, tracking semester IPK per mahasiswa, manajemen fakultas dan prodi, serta autentikasi berbasis session dengan role admin/mahasiswa.
 
 ---
